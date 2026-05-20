@@ -261,40 +261,8 @@ def load_statewide_domain_data():
 # ============================================================================
 
 def check_password():
-    if 'authenticated' not in st.session_state:
-        st.session_state.authenticated = False
-    if st.session_state.authenticated:
-        return True
-
-    st.markdown(f"""
-    <div style="text-align: center; padding: 60px 20px;">
-        <h1 style="color: {KY_BLUE}; font-size: 3rem; margin-bottom: 10px;">VERA-KY</h1>
-        <p style="color: #666; font-size: 1.1rem; margin-bottom: 40px;">
-            Verification Engine for Results &amp; Accountability<br>Kentucky Implementation
-        </p>
-    </div>
-    """, unsafe_allow_html=True)
-
-    col1, col2, col3 = st.columns([1, 2, 1])
-    with col2:
-        password = st.text_input("Enter access code:", type="password", key="pw")
-        if st.button("Access VERA-KY", use_container_width=True):
-            if password == APP_PASSWORD:
-                st.session_state.authenticated = True
-                st.rerun()
-            else:
-                st.error("Invalid access code")
-
-    st.markdown(f"""
-    <div style="text-align: center; margin-top: 60px; color: #999; font-size: 0.85rem;">
-        <p>VERA-KY analyzes WIDA ACCESS domain data and KSA results across 171 Kentucky districts.</p>
-        <p>EL population growing 128% over 20 years | WIDA ACCESS | KSIS (Infinite Campus)</p>
-        <p>JCPS Louisville: ~21,000 MLs (largest district) | 67% of 4th graders not proficient in reading</p>
-        <p><strong>SB 1 governance reform | HB 162 math reform | United We Learn redesign</strong></p>
-        <p style="margin-top: 10px;">Contact: brian@h-edu.solutions</p>
-    </div>
-    """, unsafe_allow_html=True)
-    return False
+    st.session_state.authenticated = True
+    return True
 
 
 # ============================================================================
