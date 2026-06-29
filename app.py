@@ -22,7 +22,7 @@ import plotly.graph_objects as go
 # CONFIGURATION
 # ============================================================================
 
-APP_KY_BLUE = "#002B5C"
+KY_BLUE = "#002B5C"
 KY_GOLD = "#FFD700"
 KY_DARK_BLUE = "#001A3A"
 KY_LIGHT_BLUE = "#335C85"
